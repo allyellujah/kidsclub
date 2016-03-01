@@ -22,8 +22,9 @@ function theme_setup() {
 	* You can allow clients to create multiple menus by
   * adding additional menus to the array. */
 	register_nav_menus( array(
-		'primary' => 'Primary Navigation'
-	) );
+		'primary' => 'Primary Navigation',
+		'footer_menu' => 'Footer Menu'
+ 	) );
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments
@@ -46,6 +47,7 @@ function hackeryou_styles(){
 	wp_enqueue_style('style', get_stylesheet_uri() );
 
 	wp_enqueue_style('fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
+	wp_enqueue_style('googlefont', 'https://fonts.googleapis.com/css?family=Open+Sans:300|Shadows+Into+Light');
 }
 
 add_action( 'wp_enqueue_scripts', 'hackeryou_styles');
@@ -175,6 +177,18 @@ function hackeryou_widgets_init() {
 		'after_title' => '</h3>',
 	) );
 
+	$secondWidgetArea = array(
+		'name' => 'Custom Widget Area',
+		'id' => 'custom-widget-area',
+		'description' => 'bells and whistles',
+		'before_widget' => '<div class="footer-widget">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3 class="footer-title">',
+		'after_title' => '</h3>',
+	);
+
+	register_sidebar($secondWidgetArea);
+
 }
 
 add_action( 'widgets_init', 'hackeryou_widgets_init' );
@@ -276,3 +290,12 @@ function get_post_parent($post) {
 		return $post->ID;
 	}
 }
+
+/* hackeryou_get_thumbnail_url: return current post thumbnail url */
+
+function hackeryou_get_thumbnail_url($post) {
+	$imageID = get_post_thumbnail_id($post->ID);
+	$imageURL = wp_get_attachment_url($imageID);
+	return $imageURL;
+}
+

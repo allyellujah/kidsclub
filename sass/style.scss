@@ -1,16 +1,23 @@
+$headerFont: 'Shadows Into Light', cursive;
+$bodyFont: 'Opens Sans', sans-serif;
+$green: #84BC9C;
+$blue: #0FA3B1;
+$navy: #0A2342;
+$pink: #F46197;
+$white: #FFFDF7;
+
 /*
-* Theme Name: HackerYou Starter Theme
-* Theme URI: http://hackeryou.com;
-* Description: Starter theme for building any website. Created by HackerYou. * Rename this to your own theme page.
+* Theme Name: Kids Club Theme
+* Theme URI: http://allyevice.com;
+* Description: Custom wordpress theme for children's extra-curricular organizations.
 * Version: 1.0
-* Author: HackerYou
-* Author URI: http://hackeryou.com
+* Author: Allye Vice
+* Author URI: http://allyevice.com
 */
 
 @import 'normalize';
 @import 'typography';
 @import 'navigation';
-@import 'sidebar';
 @import 'comments';
 @import 'footer';
 /*
@@ -23,23 +30,14 @@ img {
 	max-width: 100%;
 }
 
-body {
-	color: #333;
-}
-
 .container {
 	max-width: 1200px;
 	margin: 0 auto;
+	width: 100%;
 }
 
 .content {
-	float: left;
-	width: 65%;
-	margin-right: 5%;
-}
-
-.full {
-	width: 100%;
+	background: #F46197;
 }
 
 

@@ -1,15 +1,31 @@
 a {
-	color: #BA209B;
+	color: $white;
+
 	text-decoration: none;
 	&:hover {
-		color: #D424B1;
+		color: $navy;
 	}
+}
+
+h1, 
+h2 {
+	font-family: $headerFont;
+}
+
+h1 {
+	color: $blue;
+}
+
+body {
+	color: $white;
 }
 
 /* paragraphs */
 
 p {
-	line-height: 1.5;
+	font-family: $bodyFont;
+	letter-spacing: 1.4px;
+	font-weight: 300;
 }
 
 /*blockquotes*/

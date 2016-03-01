@@ -20,11 +20,15 @@
         <?php bloginfo( 'name' ); ?>
       </a>
     </h1>
-
+  </div><!-- .container -->
+  <nav>
     <?php wp_nav_menu( array(
       'container' => false,
       'theme_location' => 'primary'
     )); ?>
-  </div> <!-- /.container -->
+  </nav>
+    <div class="search">
+      <?php  dynamic_sidebar( 'primary-widget-area' ); ?>
+    </div>
 </header><!--/.header-->
 
